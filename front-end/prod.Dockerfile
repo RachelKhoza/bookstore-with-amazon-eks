@@ -5,6 +5,6 @@ RUN npm install
 COPY . ./
 RUN npm run build-prod
 
-FROM nginx:1.15-alpine
+FROM nginx:1.27.4-alpine
 COPY --from=0 /opt/forms/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
